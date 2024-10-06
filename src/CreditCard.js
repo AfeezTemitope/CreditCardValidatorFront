@@ -26,7 +26,7 @@ const CardValidator = () => {
             setIsModalOpen(true);
             setTimeout( ()=> {
                 window.location.reload();
-            }, 3000)
+            }, 7000)
         } catch (error) {
             console.error('Error:', error);
             setCardType('Failed to validate card: ' + error.message);

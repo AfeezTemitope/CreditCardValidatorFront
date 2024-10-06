@@ -10,7 +10,7 @@ const CardValidator = () => {
 
     const validateCard = async () => {
         try {
-            const response = await fetch('https://vercel.com/afeezs-projects-9c4c8ca7/credit-card-validator-backend/F2EbrsaN2hGbVPudf8hZHyVvtJit', {
+            const response = await fetch('http://localhost:5000/validate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ card_number: cardNumber })

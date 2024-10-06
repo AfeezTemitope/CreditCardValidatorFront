@@ -9,6 +9,7 @@ const Modal = ({ isOpen, onClose, message }) => {
         <div className="modal-overlay">
             <div className="modal-content">
                 <h2>{message}</h2>
+                <p>---------</p>
                 <button onClick={onClose}>Close</button>
             </div>
         </div>

@@ -80,8 +80,11 @@ body {
 
 
 @media (max-width: 600px) {
+    .card-validator{
+        width: 100%;
+    }
     .card-validator input {
-        width: 90%;
+        width: 70%;
         font-size: 14px;
         padding: 8px;
     }

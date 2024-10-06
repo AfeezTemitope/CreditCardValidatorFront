@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #220039;
+    color: white;
+}
+
+.card {
+    height: auto;
+    width: 10vw;
+}
+
+.card-validator {
+    margin-top: 100px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.card-validator input {
+    width: 300px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s;
+    outline: none;
+    animation: pulse 1s infinite;
+}
+
+.card-validator button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #790781;
+    transition: background-color 0.2s;
+}
+
+input:focus {
+    border-color: #4CAF50;
+}
+
+button:hover {
+    background-color: #54ff00;
+    color: white;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    animation: fadeIn 0.5s;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { border-color: #ccc; }
+    50% { border-color: #4CAF50; }
+    100% { border-color: #ccc; }
+}
+
+/* Background animation */
+body {
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #220039; }
+    50% { background-color: #3b0040; }
+    100% { background-color: #220039; }
+}
+
+
+@media (max-width: 600px) {
+    .card-validator input {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .card-validator button {
+        width: 90%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}

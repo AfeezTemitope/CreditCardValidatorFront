@@ -9,8 +9,9 @@ const CardValidator = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const validateCard = async () => {
+        const API_URL = 'https://credit-card-validator-backend.vercel.app'
         try {
-            const response = await fetch('https://credit-card-validator-seven.vercel.app/validate', {
+            const response = await fetch(`${API_URL}/validate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ card_number: cardNumber })

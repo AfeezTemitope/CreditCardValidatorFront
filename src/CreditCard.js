@@ -23,12 +23,16 @@ const CardValidator = () => {
             const data = await response.json();
             setCardType(data.card_type);
             setIsModalOpen(true);
-            window.location.reload();
+            setTimeout( ()=> {
+                window.location.reload();
+            }, 3000)
         } catch (error) {
             console.error('Error:', error);
             setCardType('Failed to validate card: ' + error.message);
             setIsModalOpen(true);
+            setTimeout(()=>{
             window.location.reload();
+            }, 3000)
         }
     };
 

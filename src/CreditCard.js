@@ -6,10 +6,11 @@ import Modal from './components/Modal';
 const CardValidator = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [cardType, setCardType] = useState('');
+    const [message, setMessage] = useState(''); 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const validateCard = async () => {
-        const API_URL = 'https://credit-card-validator-backend.vercel.app'
+        const API_URL = 'https://credit-card-validator-backend.vercel.app';
         try {
             const response = await fetch(`${API_URL}/validate`, {
                 method: 'POST',
@@ -23,17 +24,19 @@ const CardValidator = () => {
 
             const data = await response.json();
             setCardType(data.card_type);
+            setMessage(data.message);
             setIsModalOpen(true);
-            setTimeout( ()=> {
+            setTimeout(() => {
                 window.location.reload();
-            }, 7000)
+            }, 7000);
         } catch (error) {
             console.error('Error:', error);
             setCardType('Failed to validate card: ' + error.message);
+            setMessage('Error occurred during validation'); 
             setIsModalOpen(true);
-            setTimeout(()=>{
-            window.location.reload();
-            }, 3000)
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
         }
     };
 
